@@ -17,3 +17,4 @@ int[,] array = {
 var result = ds.Calculate(array);
 Console.WriteLine(result);
 Console.ReadKey();
+
