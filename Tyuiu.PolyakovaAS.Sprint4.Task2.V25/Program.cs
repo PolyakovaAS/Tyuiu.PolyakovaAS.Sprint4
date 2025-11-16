@@ -16,3 +16,4 @@ Console.Write("\n\r");
 DataService ds = new DataService();
 int result = ds.Calculate(ar);
 Console.WriteLine($"Произведение четных элементов массива = {result}");
+
