@@ -19,3 +19,4 @@ Console.WriteLine("* РЕЗУЛЬТАТ:                                        
 Console.WriteLine("***************************************************************************");
 Console.WriteLine($"Сумма чётных элементов массива: {ds.Calculate(array)}");
 Console.ReadKey();
+
