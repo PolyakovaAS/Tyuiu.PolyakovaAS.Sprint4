@@ -19,3 +19,4 @@ int result = ds.GetSumEvenArrEl(array);
 Console.WriteLine($"Сумма четных элементов массива = {result}");
 
 Console.ReadLine();
+
