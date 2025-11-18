@@ -1,28 +1,32 @@
-﻿using Tyuiu.PolyakovaAS.Sprint4.Task6.V12.Lib;
+﻿using Tyuiu.PolyakovaAS.Sprint4.Task7.V3.Lib;
 
+int n = 4;
+int m = 2;
+int[,] mtrx = new int[n, m];
+string value = "27182818";
 DataService ds = new DataService();
+
 Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
 Console.WriteLine("***************************************************************************");
 
-var coun = new string[] { "Россия", "Украина", "Беларусь", "Казахстан", "Молдова", "Латвия", "Эстония" };
+int index = 0;
 
-Console.WriteLine("Исходный массив:");
-for (int i = 0; i <= coun.Length - 1; i++)
+Console.WriteLine("Массив:");
+for (int i = 0; i < n; i++)
 {
-    Console.WriteLine(coun[i]);
+    for (int j = 0; j < m; j++)
+    {
+        Console.Write($"{value[index]} \t");
+        index++;
+    }
+    Console.WriteLine();
 }
-
+Console.WriteLine();
 Console.WriteLine("***************************************************************************");
 Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
 Console.WriteLine("***************************************************************************");
 
-Console.WriteLine("Слова длинна которых = 7:");
+int res = ds.Calculate(n, m, value);
+Console.WriteLine("Количество нечетных чисел в матрице = " + res);
 
-string[] res = ds.Calculate(coun);
-for (int i = 0; i <= res.Length - 1; i++)
-{
-    Console.Write($"{res[i]} \t");
-}
-
-Console.ReadKey();
-
+Console.ReadLine();
