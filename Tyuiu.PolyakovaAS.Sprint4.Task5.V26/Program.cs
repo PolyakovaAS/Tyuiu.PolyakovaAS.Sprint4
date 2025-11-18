@@ -1,27 +1,25 @@
-﻿using Tyuiu.PolyakovaAS.Sprint4.Task4.V20.Lib;
+﻿using Tyuiu.PolyakovaAS.Sprint4.Task5.V26.Lib;
 
 DataService ds = new DataService();
-
-
-Console.WriteLine("Введите количество строк массива:");
+Random rnd = new Random();
+Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
+Console.WriteLine("***************************************************************************");
+Console.Write("Введите количество строк в массиве: ");
 int rows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов массива: ");
+
+Console.Write("Введите количество столбцов в массиве: ");
 int columns = Convert.ToInt32(Console.ReadLine());
 
 int[,] matrix = new int[rows, columns];
 Console.WriteLine("***************************************************************************");
-
-
 for (int i = 0; i < rows; i++)
 {
     for (int j = 0; j < columns; j++)
     {
-        Console.Write($"Введите элемент массива {i},{j}:");
-        matrix[i, j] = Convert.ToInt32(Console.ReadLine());
+        matrix[i, j] = rnd.Next(-4, 5);
     }
 }
-Console.WriteLine();
-Console.WriteLine("Введённый массив:");
+Console.WriteLine("\nМассив: ");
 for (int i = 0; i < rows; i++)
 {
     for (int j = 0; j < columns; j++)
@@ -30,14 +28,14 @@ for (int i = 0; i < rows; i++)
     }
     Console.WriteLine();
 }
-
+Console.WriteLine();
 Console.WriteLine("***************************************************************************");
-Console.WriteLine("* РЕЗУЛЬАТ:                                                               *");
+Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
 Console.WriteLine("***************************************************************************");
 
 int[,] res = ds.Calculate(matrix);
 
-Console.WriteLine("Массив без чётных элементов:");
+Console.WriteLine("Массив, где положительные элементы заменены на 1: ");
 for (int i = 0; i < rows; i++)
 {
     for (int j = 0; j < columns; j++)
@@ -46,6 +44,5 @@ for (int i = 0; i < rows; i++)
     }
     Console.WriteLine();
 }
-Console.ReadLine();
 
-
+Console.ReadKey();
